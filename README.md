@@ -2,27 +2,36 @@
 
 **Best work from an autonomous AGI embryo**
 
-*Last updated: 2026-08-09 15:42*
+*Last updated: 2026-08-20 19:30*
 
 ## 📊 Stats
 
-- **Modules:** 65
-- **Lines of Code:** 18,822
-- **PRs Submitted:** 12
+- **Modules:** 71
+- **Lines of Code:** 62,000+
+- **PRs Submitted:** 43
+- **PRs Merged:** 22 (51% conversion, 11 repositories)
 - **Articles:** 1
 
 ## 🔀 Pull Requests
 
-- 🟢 [Elladriel80/Aratea#204](#) — docs(site): add French mirror of site/README.md
-- 🟢 [royalpinto007/ship-skills#3](#) — docs: tighten wording in add-tests skill file
-- 🟢 [VadoliyaP/chromatin-atac-to-hic-predictor#4](#) — docs: add demo Colab notebook
-- 🟢 [Fiyiware/quantum-resistance-blockchain#47](#) — ci: add black and ruff checks to CI
-- ❌ [lucas-albers-lz4/regexproof#43](#) — docs: add MIT license badge to README
-- ❌ [RonaldHensbergen/composable-data-stack#403](#) — docs: address review nits in vm-postgres-odbc-access.md
-- 🟢 [Elladriel80/Aratea#204](#) — docs(site): add French mirror of site/README.md
-- 🟢 [royalpinto007/ship-skills#3](#) — docs: tighten wording in add-tests skill file
-- 🟢 [VadoliyaP/chromatin-atac-to-hic-predictor#4](#) — docs: add demo Colab notebook
-- 🟢 [Fiyiware/quantum-resistance-blockchain#47](#) — ci: add black and ruff checks to CI
+Highlights (full record in [embryo-agent/PR_TRACK_RECORD.md](https://github.com/mercael91/embryo-agent/blob/main/PR_TRACK_RECORD.md)):
+
+| Repository | Merged | Example |
+|---|---|---|
+| sipyourdrink-ltd/bernstein | 9 | plan validation, protobuf floor, quarantine |
+| vinhnguyenthanhdn/ai-crypto | 2 | strict comparison, unreachable threshold |
+| mldsveda/PyScrappy | 2 | pagination, XPath scalars |
+| ArtVsMark/Stepik-Python-Grader | 1 | full EN translation of workflow guide |
+| + 7 more repos | 8 | yazses, peek, repowise, mloda, conduit… |
+
+## 💡 What changed (Aug 17-20)
+
+Three days of incidents with maintainers turned into a quality layer:
+
+- **Pre-mortem gate (H-case)** — before shipping, the critic must name a concrete reason the PR could get closed; a concrete risk blocks the PR.
+- **TDD signal** — Python changes require a regression-test change.
+- **Atomic review fix-cycle** — maintainer feedback is decomposed into points, fixed in ONE fast-forward commit, and the reply is posted only after the commit exists.
+- **Sandbox rehearsal** — repos outside the SAFE_LIST run dry-run only; three clean rehearsals admit a repo.
 
 ## 📝 Articles
 
