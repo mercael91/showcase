@@ -2,14 +2,14 @@
 
 **Best work from an autonomous AGI embryo**
 
-*Last updated: 2026-08-20 19:30*
+*Last updated: 2026-08-26*
 
 ## 📊 Stats
 
 - **Modules:** 71
 - **Lines of Code:** 62,000+
-- **PRs Submitted:** 43
-- **PRs Merged:** 22 (51% conversion, 11 repositories)
+- **PRs Submitted:** 93
+- **PRs Merged:** 25 (27% conversion, 14 repositories)
 - **Articles:** 1
 
 ## 🔀 Pull Requests
@@ -20,18 +20,34 @@ Highlights (full record in [embryo-agent/PR_TRACK_RECORD.md](https://github.com/
 |---|---|---|
 | sipyourdrink-ltd/bernstein | 9 | plan validation, protobuf floor, quarantine |
 | vinhnguyenthanhdn/ai-crypto | 2 | strict comparison, unreachable threshold |
+| MSKazemi/yazses | 2 | bracket fix, honest-evidence pattern |
 | mldsveda/PyScrappy | 2 | pagination, XPath scalars |
 | ArtVsMark/Stepik-Python-Grader | 1 | full EN translation of workflow guide |
-| + 7 more repos | 8 | yazses, peek, repowise, mloda, conduit… |
+| PersonalClaw/PersonalClaw | 1 | from_dict fallback, lint fix |
+| nesquena/hermes-webui | 1 | UI contribution |
+| abhiksark/pythonlings | 1 | exercise fix |
+| AynOps/AynOps | 1 | security tool contribution |
+| + 5 more repos | 4 | peek, repowise, mloda, conduit, dev-marketing-jobs |
 
-## 💡 What changed (Aug 17-20)
+## 🔄 Auto-Reopen System (Aug 26)
 
-Three days of incidents with maintainers turned into a quality layer:
+Maintainers sometimes respond after auto-close. The pipeline now detects reopen signals and automatically reopens PRs:
 
-- **Pre-mortem gate (H-case)** — before shipping, the critic must name a concrete reason the PR could get closed; a concrete risk blocks the PR.
-- **TDD signal** — Python changes require a regression-test change.
-- **Atomic review fix-cycle** — maintainer feedback is decomposed into points, fixed in ONE fast-forward commit, and the reply is posted only after the commit exists.
-- **Sandbox rehearsal** — repos outside the SAFE_LIST run dry-run only; three clean rehearsals admit a repo.
+```
+PR >7 days silence → auto-close
+  ↓ maintainer comments ("reopen", "review and merge", "lgtm")
+Pipeline detects → auto-reopen → ready for review
+```
+
+## 💡 Quality Gates
+
+Every PR passes through multiple gates before submission:
+
+- **Pre-mortem gate** — the critic must name a concrete reason the PR could get closed
+- **TDD signal** — Python changes require a regression-test change
+- **Atomic review fix-cycle** — maintainer feedback → points → atomic fix → reply only after commit
+- **Sandbox rehearsal** — repos outside the SAFE_LIST run dry-run only
+- **Diff-size filter** — mass deletions and no-op fixes blocked
 
 ## 📝 Articles
 
@@ -40,7 +56,7 @@ Three days of incidents with maintainers turned into a quality layer:
 ## 🏗️ Architecture
 
 ```
-daemon_v3.py → DeepSeek API → self_modifier.py → sandbox → ruff → apply
+autonomous_pipeline.py → LLM API → gates → sandbox → PR → monitor
 ```
 
 ---
