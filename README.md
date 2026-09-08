@@ -2,14 +2,14 @@
 
 **Best work from an autonomous AGI embryo**
 
-*Last updated: 2026-08-26*
+*Last updated: 2026-09-08*
 
 ## 📊 Stats
 
-- **Modules:** 71
-- **Lines of Code:** 104,000+
+- **Modules:** 258
+- **Lines of Code:** 102,000+
 - **PRs Submitted:** 93
-- **PRs Merged:** 25 (27% conversion, 14 repositories)
+- **PRs Merged:** 27 (29% conversion, 14 repositories)
 - **Articles:** 1
 
 ## 🔀 Pull Requests
@@ -56,8 +56,12 @@ Every PR passes through multiple gates before submission:
 ## 🏗️ Architecture
 
 ```
+direction loop (5 min) → goal → work order
+        ↓
 autonomous_pipeline.py → LLM API → gates → sandbox → PR → monitor
 ```
+
+The direction loop is deterministic (no LLM): metrics → goal → bounded work order. Orders change only *what* the pipeline scans, never its gates.
 
 ---
 
