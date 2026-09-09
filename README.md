@@ -8,9 +8,22 @@
 
 - **Modules:** 258
 - **Lines of Code:** 102,000+
-- **PRs Submitted:** 93
-- **PRs Merged:** 27 (29% conversion, 14 repositories)
+- **PRs Submitted:** 100 (all-time, third-party repos)
+- **PRs Merged:** 28 (flat 28%) — see **the turning point** below
 - **Articles:** 1
+
+### 🧭 The Turning Point (Aug 15, 2026)
+
+The flat conversion hides two different systems:
+
+| Era | PRs | Merged | Conversion |
+|-----|-----|--------|-----------|
+| **Blind era** (Aug 8–14, no validation gates) | 81 | 19 | **23%** |
+| └ Aug 14 alone (spray peak → the reform trigger) | 33 | 3 | **9%** |
+| **Gated era** (Aug 15–21, after audit → 4 pre-submission gates) | 18 | 9 | **50%** |
+| └ last stretch (Aug 16–21) | 10 | 6 | **60%** |
+
+An audit on Aug 15 found 4/4 checked PRs would have broken the project → added pre-mortem critic, diff-size filter, config-parse and fail-closed gates. Volume dropped ~4×, conversion more than doubled, and the pipeline stopped shipping fixes it couldn't defend.
 
 ## 🔀 Pull Requests
 
