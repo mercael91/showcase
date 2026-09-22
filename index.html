@@ -17,89 +17,104 @@
         table { width: 100%; border-collapse: collapse; margin: 1rem 0; }
         th, td { padding: 0.5rem; text-align: left; border-bottom: 1px solid #21262d; }
         th { color: #58a6ff; }
-        .badge { display: inline-block; padding: 0.25rem 0.5rem; border-radius: 4px; font-size: 0.8rem; }
+        .badge { display: inline-block; padding: 0.25rem 0.5rem; border-radius: 4px; font-size: 0.8rem; margin-right: .4rem; }
         .badge-green { background: #238636; color: white; }
         .badge-blue { background: #1f6feb; color: white; }
+        .badge-grey { background: #30363d; color: white; }
         .footer { margin-top: 3rem; padding-top: 1rem; border-top: 1px solid #21262d; color: #8b949e; font-size: 0.9rem; }
+        a { color: #58a6ff; }
     </style>
 </head>
 <body>
     <div class="container">
         <h1>🧬 AGI-Zarodysh</h1>
-        <p>An autonomous AGI embryo that learns, self-improves, and contributes to open source.</p>
-        
+        <p>An autonomous agent that learns, self-improves, and contributes to open source — inside a written charter, behind a chain of validation gates.</p>
+
         <div class="stats">
             <div class="stat">
-                <div class="stat-value">67</div>
+                <div class="stat-value">435</div>
                 <div class="stat-label">Modules</div>
             </div>
             <div class="stat">
-                <div class="stat-value">19,235</div>
+                <div class="stat-value">78K</div>
                 <div class="stat-label">Lines of Code</div>
             </div>
             <div class="stat">
-                <div class="stat-value">12</div>
-                <div class="stat-label">Pull Requests</div>
+                <div class="stat-value">1,103</div>
+                <div class="stat-label">Tests</div>
             </div>
             <div class="stat">
-                <div class="stat-value">47</div>
-                <div class="stat-label">Memory Episodes</div>
+                <div class="stat-value">28</div>
+                <div class="stat-label">PRs Merged</div>
+            </div>
+            <div class="stat">
+                <div class="stat-value">53</div>
+                <div class="stat-label">Repos Tried</div>
+            </div>
+            <div class="stat">
+                <div class="stat-value">13</div>
+                <div class="stat-label">LLM Providers</div>
             </div>
         </div>
-        
+
         <h2>🏗️ Architecture</h2>
         <pre style="background: #161b22; padding: 1rem; border-radius: 8px; overflow-x: auto;">
-┌─────────────────────────────────────────────┐
-│  AGI-Zarodysh — 67 modules                │
-│                                             │
-│  ┌──────────┐  ┌──────────┐  ┌──────────┐  │
-│  │  Daemon  │──▶│  Brain   │──▶│  Hands   │  │
-│  │daemon_v3 │  │ DeepSeek │  │self_mod  │  │
-│  └──────────┘  └──────────┘  └──────────┘  │
-│       │                            │        │
-│       │      ┌──────────┐          │        │
-│       └─────▶│ Telegram │◀─────────┘        │
-│              │  (voice) │                   │
-│              └──────────┘                   │
-└─────────────────────────────────────────────┘
+┌──────────────────────────────────────────────────┐
+│  AGI-Zarodysh — 435 modules                      │
+│                                                   │
+│  ┌──────────┐  ┌──────────┐  ┌──────────────┐   │
+│  │ Direction│─▶│ Pipeline │─▶│ Gates +      │   │
+│  │  loop    │  │ scan→gen │  │ rehearsal    │   │
+│  │ (metrics)│  │ debate   │  │ (target repo)│   │
+│  └──────────┘  └──────────┘  └──────────────┘   │
+│       │              │               │           │
+│       │      ┌───────▼───────┐       │           │
+│       └─────▶│  Memory +     │◀──────┘           │
+│              │  Ethics core  │                   │
+│              └───────┬───────┘                   │
+│                      │                           │
+│              ┌───────▼───────┐                   │
+│              │ Telegram +    │                   │
+│              │ dashboard     │                   │
+│              └───────────────┘                   │
+└──────────────────────────────────────────────────┘
         </pre>
-        
-        <h2>📦 Key Modules</h2>
-        <table>
-            <tr><th>Module</th><th>Lines</th></tr>
-            <tr><td>daemon_v3.py</td><td>1738</td></tr>
-<tr><td>daemon_v2.py</td><td>1100</td></tr>
-<tr><td>self_modifier.py</td><td>985</td></tr>
-<tr><td>telegram_integration.py</td><td>846</td></tr>
-<tr><td>github_integration.py</td><td>573</td></tr>
-<tr><td>real_action.py</td><td>570</td></tr>
-<tr><td>dashboard_server.py</td><td>452</td></tr>
-<tr><td>memory.py</td><td>434</td></tr>
-<tr><td>dashboard.py</td><td>425</td></tr>
-<tr><td>evolution.py</td><td>390</td></tr>
-<tr><td>benchmark.py</td><td>375</td></tr>
-<tr><td>pr_watcher.py</td><td>373</td></tr>
-<tr><td>sensor.py</td><td>333</td></tr>
-<tr><td>advanced_planner.py</td><td>332</td></tr>
-<tr><td>dashboard_live.py</td><td>328</td></tr>
 
+        <h2>🧭 Three Eras</h2>
+        <table>
+            <tr><th>Era</th><th>PRs</th><th>Merged</th><th>Conversion</th></tr>
+            <tr><td>Blind (Aug 8–14, no gates)</td><td>81</td><td>19</td><td>23%</td></tr>
+            <tr><td>└ Aug 14 alone (spray peak)</td><td>33</td><td>3</td><td>9%</td></tr>
+            <tr><td>Gated (Aug 15–21)</td><td>19</td><td>9</td><td>47%</td></tr>
+            <tr><td>└ post-stabilization (Aug 16–21)</td><td>11</td><td>6</td><td>55%</td></tr>
+            <tr><td>Consolidation (Aug 22 – Sep 22)</td><td>5</td><td>0</td><td>—</td></tr>
         </table>
-        
+
         <h2>🔀 Pull Requests</h2>
         <p>
-            <span class="badge badge-green">8 Open</span>
-            <span class="badge badge-blue">0 Merged</span>
+            <span class="badge badge-blue">105 submitted</span>
+            <span class="badge badge-green">28 merged</span>
+            <span class="badge badge-grey">3 open</span>
         </p>
-        
+        <p style="color:#8b949e;font-size:.9rem">Full list with links:
+            <a href="https://github.com/mercael91/embryo-agent/blob/main/PR_TRACK_RECORD.md">PR_TRACK_RECORD.md</a>
+        </p>
+
+        <h2>💡 Quality Gates</h2>
+        <pre style="background: #161b22; padding: 1rem; border-radius: 8px; overflow-x: auto;">
+read the real files → generate (generator ↔ critic debate) → gates:
+pre-mortem · TDD signal · diff size · fail-closed → rehearse on the target
+project's own tests → atomic commit → submit → monitor → learn
+        </pre>
+
         <h2>🧠 Learning Loop</h2>
         <pre style="background: #161b22; padding: 1rem; border-radius: 8px;">
-Action → Result → Analysis → Lesson → Strategy Update
+Action → Result → Analysis → Lesson → Strategy Update → Next Action
         </pre>
-        
+
         <div class="footer">
-            <p>Created by <strong>Grigory Fedorenko (Гриша)</strong></p>
-            <p>Last updated: 2026-08-09 15:45</p>
-            <p><a href="https://github.com/mercael91-bot/showcase" style="color: #58a6ff;">Showcase Repo</a></p>
+            <p>Numbers counted from the live system on 2026-09-22 (non-test Python modules; test functions under <code>tests/</code>; PRs via GitHub search over the agent account, own sandbox repo excluded).</p>
+            <p>Details: <a href="https://github.com/mercael91/embryo-agent">embryo-agent</a> · <a href="README.md">showcase README</a></p>
         </div>
     </div>
 </body>

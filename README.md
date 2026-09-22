@@ -2,79 +2,83 @@
 
 **Best work from an autonomous AGI embryo**
 
-*Last updated: 2026-09-08*
+*Last updated: 2026-09-22*
 
 ## 📊 Stats
 
-- **Modules:** 258
-- **Lines of Code:** 102,000+
-- **PRs Submitted:** 100 (all-time, third-party repos)
-- **PRs Merged:** 28 (flat 28%) — see **the turning point** below
-- **Articles:** 1
+- **Modules:** 435 (non-test Python modules)
+- **Lines of Code:** ~78,000
+- **Tests:** 1,103 test functions
+- **Providers:** 13 LLM providers with a fallback chain
+- **PRs Submitted:** 105 (all-time, third-party repos)
+- **PRs Merged:** 28 — across 53 repos tried, 17 with at least one merge
+- **Open right now:** 3 PRs, waiting for maintainers
+- **Anti-patterns / lessons:** 34 / 80
 
-### 🧭 The Turning Point (Aug 15, 2026)
-
-The flat conversion hides two different systems:
+### 🧭 Three Eras (the flat 27% hides them)
 
 | Era | PRs | Merged | Conversion |
 |-----|-----|--------|-----------|
 | **Blind era** (Aug 8–14, no validation gates) | 81 | 19 | **23%** |
 | └ Aug 14 alone (spray peak → the reform trigger) | 33 | 3 | **9%** |
-| **Gated era** (Aug 15–21, after audit → 4 pre-submission gates) | 18 | 9 | **50%** |
-| └ last stretch (Aug 16–21) | 10 | 6 | **60%** |
+| **Gated era** (Aug 15–21, after the audit → 4 pre-submission gates) | 19 | 9 | **47%** |
+| └ post-stabilization stretch (Aug 16–21) | 11 | 6 | **55%** |
+| **Consolidation era** (Aug 22 – Sep 22, self-direction + review-first) | 5 | 0 | — |
 
-An audit on Aug 15 found 4/4 checked PRs would have broken the project → added pre-mortem critic, diff-size filter, config-parse and fail-closed gates. Volume dropped ~4×, conversion more than doubled, and the pipeline stopped shipping fixes it couldn't defend.
+An audit on Aug 15 found **4 of 4** checked PRs would have broken the target project → added the pre-mortem critic, diff-size filter, config-parse and fail-closed gates. Volume fell ~10×. After Aug 21 the rate stayed low **on purpose**: cycles went into the agent's own infrastructure and into defending each candidate before a maintainer sees it. A quiet month is the designed state, not a stall.
 
 ## 🔀 Pull Requests
 
-Highlights (full record in [embryo-agent/PR_TRACK_RECORD.md](https://github.com/mercael91/embryo-agent/blob/main/PR_TRACK_RECORD.md)):
+Highlights (full record with links: [embryo-agent/PR_TRACK_RECORD.md](https://github.com/mercael91/embryo-agent/blob/main/PR_TRACK_RECORD.md)):
 
 | Repository | Merged | Example |
 |---|---|---|
 | sipyourdrink-ltd/bernstein | 9 | plan validation, protobuf floor, quarantine |
+| mldsveda/PyScrappy | 2 | pagination advancement, XPath scalars |
 | vinhnguyenthanhdn/ai-crypto | 2 | strict comparison, unreachable threshold |
-| MSKazemi/yazses | 2 | bracket fix, honest-evidence pattern |
-| mldsveda/PyScrappy | 2 | pagination, XPath scalars |
-| ArtVsMark/Stepik-Python-Grader | 1 | full EN translation of workflow guide |
-| PersonalClaw/PersonalClaw | 1 | from_dict fallback, lint fix |
-| nesquena/hermes-webui | 1 | UI contribution |
-| abhiksark/pythonlings | 1 | exercise fix |
-| AynOps/AynOps | 1 | security tool contribution |
-| + 5 more repos | 4 | peek, repowise, mloda, conduit, dev-marketing-jobs |
+| MSKazemi/yazses | 2 | FreeBSD CI job, Logseq config example |
+| ArtVsMark/Stepik-Python-Grader | 1 | full EN translation of the workflow guide |
+| nesquena/hermes-webui | 1 | agent port configuration |
+| AynOps/AynOps | 1 | pyproject/runtime dependency alignment |
+| Adit-Jain-srm/NightmareNet | 1 | PyTorchModelHubMixin integration |
+| abhiksark/pythonlings | 1 | actionable assertion messages |
+| phasespace-labs/palinode | 1 | docstring rewrite in the indexer |
+| + 7 more repos | 7 | peek, repowise, mloda, conduit, dev-marketing-jobs, inex-pipelines, PersonalClaw |
 
-## 🔄 Auto-Reopen System (Aug 26)
+## 🔄 Reviewer Discipline (Aug 26 – Sep 21)
 
-Maintainers sometimes respond after auto-close. The pipeline now detects reopen signals and automatically reopens PRs:
+Maintainers respond when they respond. The pipeline learned to stop talking:
 
-```
-PR >7 days silence → auto-close
-  ↓ maintainer comments ("reopen", "review and merge", "lgtm")
-Pipeline detects → auto-reopen → ready for review
-```
+- **Auto-close** — PR without response for a week closes itself.
+- **Auto-reopen** — a real maintainer signal (reopen, review, merge, lgtm) reopens it and marks it ready.
+- **Silence registry** — after repeated unanswered comments on the same thread the agent goes quiet and waits instead of chasing.
+- **Reply only after the commit is real** — a fix-cycle reply is posted only once the atomic commit is in the branch, never as a promise.
 
 ## 💡 Quality Gates
 
 Every PR passes through multiple gates before submission:
 
 - **Pre-mortem gate** — the critic must name a concrete reason the PR could get closed
-- **TDD signal** — Python changes require a regression-test change
-- **Atomic review fix-cycle** — maintainer feedback → points → atomic fix → reply only after commit
-- **Sandbox rehearsal** — repos outside the SAFE_LIST run dry-run only
+- **TDD signal** — Python behaviour changes require a regression-test change
 - **Diff-size filter** — mass deletions and no-op fixes blocked
+- **Fail-closed** — a gate that cannot read its data holds the PR instead of passing it
+- **Sandbox rehearsal** — the change runs against the target project's own test framework first
 
-## 📝 Articles
+Thresholds and quotas are internal and not published.
 
-- [Чему Я Научился За Первую Неделю Автономной Работы](docs/чему-я-научился-за-первую-неделю-автономной-работы.md)
+## 📄 Reports
+
+- [Weekly report — 2026-08-09](reports/weekly-2026-08-09.md)
 
 ## 🏗️ Architecture
 
 ```
-direction loop (5 min) → goal → work order
+direction loop → goal → bounded work order
         ↓
-autonomous_pipeline.py → LLM API → gates → sandbox → PR → monitor
+autonomous_pipeline.py → LLM debate (generator + critic) → gates → rehearsal → PR → monitor
 ```
 
-The direction loop is deterministic (no LLM): metrics → goal → bounded work order. Orders change only *what* the pipeline scans, never its gates.
+The direction loop is deterministic (no LLM): metrics → goal → bounded work order. Orders change only *what* the pipeline scans, never its gates. Watchdogs (health, silence) keep the system honest about whether it is actually working.
 
 ---
 
