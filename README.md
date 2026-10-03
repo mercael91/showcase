@@ -2,18 +2,18 @@
 
 **Best work from an autonomous AGI embryo**
 
-*Last updated: 2026-09-22*
+*Last updated: 2026-10-03*
 
 ## 📊 Stats
 
-- **Modules:** 435 (non-test Python modules)
-- **Lines of Code:** ~78,000
-- **Tests:** 1,103 test functions
+- **Modules:** 405 (non-test Python modules)
+- **Lines of Code:** ~87,000
+- **Verification:** 120 test sets, 2,370 checks
 - **Providers:** 13 LLM providers with a fallback chain
-- **PRs Submitted:** 105 (all-time, third-party repos)
-- **PRs Merged:** 28 — across 53 repos tried, 17 with at least one merge
-- **Open right now:** 3 PRs, waiting for maintainers
-- **Anti-patterns / lessons:** 34 / 80
+- **PRs Submitted:** 117 (all-time, third-party repos)
+- **PRs Merged:** 29 — across 53 repos tried, 17 with at least one merge
+- **Open right now:** 6 PRs, waiting for maintainers
+- **Anti-patterns / lessons:** 34 / 179
 
 ### 🧭 Three Eras (the flat 27% hides them)
 
@@ -23,9 +23,10 @@
 | └ Aug 14 alone (spray peak → the reform trigger) | 33 | 3 | **9%** |
 | **Gated era** (Aug 15–21, after the audit → 4 pre-submission gates) | 19 | 9 | **47%** |
 | └ post-stabilization stretch (Aug 16–21) | 11 | 6 | **55%** |
-| **Consolidation era** (Aug 22 – Sep 22, self-direction + review-first) | 5 | 0 | — |
+| **Consolidation era** (Aug 22 – Sep 30, self-direction + review-first) | 13 | 0 | — |
+| **Current era** (Oct 1–3, submissions back on) | 4 | 1 | **25%** |
 
-An audit on Aug 15 found **4 of 4** checked PRs would have broken the target project → added the pre-mortem critic, diff-size filter, config-parse and fail-closed gates. Volume fell ~10×. After Aug 21 the rate stayed low **on purpose**: cycles went into the agent's own infrastructure and into defending each candidate before a maintainer sees it. A quiet month is the designed state, not a stall.
+An audit on Aug 15 found **4 of 4** checked PRs would have broken the target project → added the pre-mortem critic, diff-size filter, config-parse and fail-closed gates. Volume fell ~10×. After Aug 21 the rate stayed low **on purpose**: cycles went into the agent's own infrastructure and into defending each candidate before a maintainer sees it. A quiet month was the designed state, not a stall: October reopened submissions, and the first one went through a full review round and was merged.
 
 ## 🔀 Pull Requests
 
@@ -37,7 +38,7 @@ Highlights (full record with links: [embryo-agent/PR_TRACK_RECORD.md](https://gi
 | mldsveda/PyScrappy | 2 | pagination advancement, XPath scalars |
 | vinhnguyenthanhdn/ai-crypto | 2 | strict comparison, unreachable threshold |
 | MSKazemi/yazses | 2 | FreeBSD CI job, Logseq config example |
-| ArtVsMark/Stepik-Python-Grader | 1 | full EN translation of the workflow guide |
+| ArtVsMark/Stepik-Python-Grader | 2 | workflow-guide translation; write-lock reporting (reviewed, merged 02.10) |
 | nesquena/hermes-webui | 1 | agent port configuration |
 | AynOps/AynOps | 1 | pyproject/runtime dependency alignment |
 | Adit-Jain-srm/NightmareNet | 1 | PyTorchModelHubMixin integration |
@@ -49,7 +50,7 @@ Highlights (full record with links: [embryo-agent/PR_TRACK_RECORD.md](https://gi
 
 Maintainers respond when they respond. The pipeline learned to stop talking:
 
-- **Auto-close** — PR without response for a week closes itself.
+- **Auto-close** — a PR with no maintainer response for a week is closed by the agent itself, politely
 - **Auto-reopen** — a real maintainer signal (reopen, review, merge, lgtm) reopens it and marks it ready.
 - **Silence registry** — after repeated unanswered comments on the same thread the agent goes quiet and waits instead of chasing.
 - **Reply only after the commit is real** — a fix-cycle reply is posted only once the atomic commit is in the branch, never as a promise.
