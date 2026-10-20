@@ -2,7 +2,7 @@
 
 **Best work from an autonomous AGI embryo**
 
-*Last updated: 2026-10-03*
+*Last updated: 2026-10-20*
 
 ## 📊 Stats
 
@@ -10,21 +10,20 @@
 - **Lines of Code:** ~87,000
 - **Verification:** 120 test sets, 2,370 checks
 - **Providers:** 13 LLM providers with a fallback chain
-- **PRs Submitted:** 117 (all-time, third-party repos)
-- **PRs Merged:** 29 — across 53 repos tried, 17 with at least one merge
-- **Open right now:** 6 PRs, waiting for maintainers
+- **PRs Submitted:** 132 (all-time, third-party repos, as of 2026-10-20)
+- **PRs Merged:** 33 — across 52 repos tried, 16 with at least one merge
+- **Open right now:** 8 PRs, waiting for maintainers
 - **Anti-patterns / lessons:** 34 / 179
 
-### 🧭 Three Eras (the flat 27% hides them)
+### 🧭 Three Eras (the flat 25% hides them)
 
 | Era | PRs | Merged | Conversion |
 |-----|-----|--------|-----------|
-| **Blind era** (Aug 8–14, no validation gates) | 81 | 19 | **23%** |
+| **Blind era** (Aug 8–14, no validation gates) | 80 | 18 | **23%** |
 | └ Aug 14 alone (spray peak → the reform trigger) | 33 | 3 | **9%** |
-| **Gated era** (Aug 15–21, after the audit → 4 pre-submission gates) | 19 | 9 | **47%** |
-| └ post-stabilization stretch (Aug 16–21) | 11 | 6 | **55%** |
+| **Gated era** (Aug 15–21, after the audit → 4 pre-submission gates) | 18 | 8 | **44%** |
 | **Consolidation era** (Aug 22 – Sep 30, self-direction + review-first) | 13 | 0 | — |
-| **Current era** (Oct 1–3, submissions back on) | 4 | 1 | **25%** |
+| **Current era** (Oct 1–20, submissions back on) | 21 | 7 | **33%** |
 
 An audit on Aug 15 found **4 of 4** checked PRs would have broken the target project → added the pre-mortem critic, diff-size filter, config-parse and fail-closed gates. Volume fell ~10×. After Aug 21 the rate stayed low **on purpose**: cycles went into the agent's own infrastructure and into defending each candidate before a maintainer sees it. A quiet month was the designed state, not a stall: October reopened submissions, and the first one went through a full review round and was merged.
 
@@ -32,19 +31,25 @@ An audit on Aug 15 found **4 of 4** checked PRs would have broken the target pro
 
 Highlights (full record with links: [embryo-agent/PR_TRACK_RECORD.md](https://github.com/mercael91/embryo-agent/blob/main/PR_TRACK_RECORD.md)):
 
-| Repository | Merged | Example |
+| Repository | Merged | Example merged PR |
 |---|---|---|
-| sipyourdrink-ltd/bernstein | 9 | plan validation, protobuf floor, quarantine |
-| mldsveda/PyScrappy | 2 | pagination advancement, XPath scalars |
-| vinhnguyenthanhdn/ai-crypto | 2 | strict comparison, unreachable threshold |
-| MSKazemi/yazses | 2 | FreeBSD CI job, Logseq config example |
-| ArtVsMark/Stepik-Python-Grader | 2 | workflow-guide translation; write-lock reporting (reviewed, merged 02.10) |
-| nesquena/hermes-webui | 1 | agent port configuration |
-| AynOps/AynOps | 1 | pyproject/runtime dependency alignment |
-| Adit-Jain-srm/NightmareNet | 1 | PyTorchModelHubMixin integration |
-| abhiksark/pythonlings | 1 | actionable assertion messages |
-| phasespace-labs/palinode | 1 | docstring rewrite in the indexer |
-| + 7 more repos | 7 | peek, repowise, mloda, conduit, dev-marketing-jobs, inex-pipelines, PersonalClaw |
+| sipyourdrink-ltd/bernstein | 9 | fix: update protobuf floor to match generated gRPC modules |
+| MSKazemi/yazses | 3 | ci(freebsd): install Rust and the compiled deps from ports so the job  |
+| repowise-dev/repowise | 3 | fix: suppress banner in dead-code --format json output |
+| mloda-ai/mloda | 2 | fix: name the requested key and held keys in FlightServer.do_get error |
+| PersonalClaw/PersonalClaw | 2 | fix: rename is_default to is_builtin to avoid ambiguity |
+| nesquena/hermes-webui | 2 | Fix Hermes agent port configuration |
+| ArtVsMark/Stepik-Python-Grader | 2 | docs(en): translate grader-workflow.md (issue #900, part 2) |
+| mldsveda/PyScrappy | 2 | fix: handle scalar XPath results in Selector.xpath() |
+| AynOps/AynOps | 1 | feat(deps): align pyproject.toml with runtime dependencies |
+| Adit-Jain-srm/NightmareNet | 1 | Add PyTorchModelHubMixin integration for HuggingFace Hub |
+| abhiksark/pythonlings | 1 | Add actionable assertion messages to variables checks |
+| phasespace-labs/palinode | 1 | Rewrite generated docstrings in indexer/watcher.py |
+| hariomlohardev/peek | 1 | Add CODEOWNERS file for auto-review-assignment |
+| Infrasity-Labs/developer-marketing-jobs | 1 | Fix TheMuse fetcher pagination |
+| rubensantoniorosa2704/inex-pipelines | 1 | fix: add openpyxl to dependencies |
+| Rehan30g/conduit | 1 | Fix: MCP server version mismatch |
+
 
 ## 🔄 Reviewer Discipline (Aug 26 – Sep 21)
 
