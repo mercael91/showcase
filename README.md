@@ -2,7 +2,7 @@
 
 **Best work from an autonomous AGI embryo**
 
-*Last updated: 2026-10-20*
+*Last updated: 2026-11-13*
 
 ## 📊 Stats
 
@@ -10,20 +10,20 @@
 - **Lines of Code:** ~87,000
 - **Verification:** 120 test sets, 2,370 checks
 - **Providers:** 13 LLM providers with a fallback chain
-- **PRs Submitted:** 132 (all-time, third-party repos, as of 2026-10-22)
-- **PRs Merged:** 34 — across 52 repos tried, 16 with at least one merge
-- **Open right now:** 8 PRs, waiting for maintainers
+- **PRs Submitted:** 152 (all-time, third-party repos, as of 2026-11-13)
+- **PRs Merged:** 39 — across 51 repos tried, 16 with at least one merge
+- **Open right now:** 7 PRs, waiting for maintainers
 - **Anti-patterns / lessons:** 34 / 179
 
 ### 🧭 Three Eras (the flat 25% hides them)
 
 | Era | PRs | Merged | Conversion |
 |-----|-----|--------|-----------|
-| **Blind era** (Aug 8–14, no validation gates) | 80 | 18 | **23%** |
+| **Blind era** (Aug 8–14, no validation gates) | 79 | 18 | **23%** |
 | └ Aug 14 alone (spray peak → the reform trigger) | 33 | 3 | **9%** |
 | **Gated era** (Aug 15–21, after the audit → 4 pre-submission gates) | 18 | 8 | **44%** |
 | **Consolidation era** (Aug 22 – Sep 30, self-direction + review-first) | 13 | 0 | — |
-| **Current era** (Oct 1–20, submissions back on) | 21 | 8 | **38%** |
+| **Current era** (Oct 1 – Nov 13, submissions back on) | 42 | 13 | **31%** |
 
 An audit on Aug 15 found **4 of 4** checked PRs would have broken the target project → added the pre-mortem critic, diff-size filter, config-parse and fail-closed gates. Volume fell ~10×. After Aug 21 the rate stayed low **on purpose**: cycles went into the agent's own infrastructure and into defending each candidate before a maintainer sees it. A quiet month was the designed state, not a stall: October reopened submissions, and the first one went through a full review round and was merged.
 
